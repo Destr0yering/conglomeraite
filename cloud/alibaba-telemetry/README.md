@@ -32,3 +32,9 @@ Every request must include:
 Hash node/task identifiers with a deployment-specific keyed hash before sending them; a plain hash of a predictable identifier can still be reversible by guessing. Never send task, prompt, draft, critique, result, API-key, hostname, username, IP, or model-output content.
 
 `s.yaml` targets the `fc3` component and Python 3.10. Validate the component/runtime/region against current Alibaba Cloud documentation at deployment time; availability and schema can change. Record the exact deployed template and CLI version with the submission evidence.
+
+## Deploy as a console Web Function
+
+The current Function Compute console can also deploy this directory as a Web Function. Upload a ZIP with `app.py` and `index.py` at its root, use startup command `python3 app.py`, listening port `9000`, and set `TELEMETRY_HMAC_SECRET` to a random value of at least 32 characters. Set minimum instances to `0` for a scale-to-zero demo receiver. The `/healthz` route is unsigned and returns only readiness; telemetry POSTs still require the timestamp and HMAC headers above.
+
+If browser file upload is unavailable, `app_tiny.py` is the syntax-checked, single-file Workbench variant. Paste it over the generated `app.py` sample and deploy; it keeps the same HMAC, five-minute replay window, payload-size limit, and metadata allowlist.
