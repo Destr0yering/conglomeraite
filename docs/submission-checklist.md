@@ -32,11 +32,11 @@ Audited against the live Devpost account and submission fields on **2026-07-18**
 - [x] Offline verification passes: 47 core tests, 3 telemetry tests, and Python compilation.
 - [x] `deploy/deploy.sh` passes Bash syntax validation with Git for Windows.
 - [x] Repository scan found no `sk-ws-` credential in tracked workspace files.
-- [x] Initial local Git commit created on `codex/hackathon-mvp`; the working tree was clean after the commit.
+- [x] Initial local Git commits created on `codex/hackathon-mvp`; the working tree was clean after the commits.
 
 ## Critical blockers before submission
 
-- [ ] **Create the public repository.** The local branch and commit exist, but there is no remote or public URL.
+- [x] **Create the public repository.** `https://github.com/Destr0yering/conglomeraite` is attached as `origin`.
 - [ ] **Install/provide `rsync` for deployment.** Git Bash is present, but its current installation does not include `rsync`; the staged deploy script cannot run from this laptop yet.
 - [x] **Create the Devpost project.** Draft project `the-conglomeraite` exists; it is not yet a hackathon submission.
 - [ ] **Deploy on Alibaba Cloud.** `cloud/alibaba-telemetry/` is tested source only; it is not deployed.
@@ -51,7 +51,7 @@ Audited against the live Devpost account and submission fields on **2026-07-18**
 
 ## Live Devpost field checklist
 
-- [ ] Project name, tagline, description, and Built With list — draft ready in `docs/devpost-submission-draft.md`.
+- [x] Project name, tagline, description, and Built With list are populated in the Devpost draft.
 - [ ] Submitter type: Individual, Team, or Organization — user decision required.
 - [ ] Organization name — optional if not applicable.
 - [ ] Country of residence for every member — user input required.
@@ -59,8 +59,8 @@ Audited against the live Devpost account and submission fields on **2026-07-18**
 - [ ] Project start date in MM-DD-YY — user input required.
 - [ ] If the project predates 2026-05-26, describe significant work completed during the submission period.
 - [ ] Select **Track 5: EdgeAgent**. Explain the Track 3 Agent Society mechanics in the description; the form accepts one track.
-- [ ] Public open-source repository URL.
-- [ ] Direct URL to the code file showing the QwenCloud base URL.
+- [x] Public open-source repository URL: `https://github.com/Destr0yering/conglomeraite`.
+- [x] Direct URL to `src/conglomeraite/config.py` showing the QwenCloud base URL.
 - [ ] Architecture diagram file.
 - [ ] Alibaba Cloud Workbench screenshot.
 - [ ] Public demo video URL. A website and ZIP file are not required by the current form.
@@ -89,8 +89,8 @@ Audited against the live Devpost account and submission fields on **2026-07-18**
 2. Deploy the application with the `sysop-bridge` profile and capture a local-only, zero-paid-inference task trace after explicit approval.
 3. Deploy the metadata receiver to Alibaba Function Compute, invoke it with a signed metadata-only event, and capture Workbench/log proof.
 4. Record the under-three-minute demo using the existing shot plan: topology, 10/10 evidence, edge/offline continuation, memory containment, measured pilot, and Alibaba proof.
-5. Create the public GitHub repository, push `codex/hackathon-mvp`, verify the MIT license badge/About section, and test every public link in a private/incognito window.
-6. Create the Devpost project from `docs/devpost-submission-draft.md`, upload the diagram/screenshot, add the video and code links, and complete the user-only eligibility fields.
+5. Verify the public GitHub repository's MIT license/About section and test every public link in a private/incognito window.
+6. Finish the existing Devpost draft: upload the diagram/screenshot, add the video, and complete the user-only eligibility fields.
 7. Submit early, reopen the public entry, verify the video/repository/files render without login, and retain a screenshot of the submitted state.
 
 ## Three-minute demo shot plan

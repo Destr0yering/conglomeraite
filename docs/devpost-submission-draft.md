@@ -10,7 +10,7 @@ Prepared on 2026-07-18 from the live QwenCloud hackathon submission fields. Repl
 
 **Built with:** Python, QwenCloud, qwen-plus, NVIDIA Jetson Orin Nano, llama.cpp, systemd, tegrastats, Alibaba Cloud Function Compute, Serverless Devs, HMAC-SHA256
 
-**Repository URL:** `[PENDING: public GitHub URL]`
+**Repository URL:** https://github.com/Destr0yering/conglomeraite
 
 **Video URL:** `[PENDING: public YouTube or Vimeo URL, under three minutes]`
 
@@ -44,7 +44,7 @@ Jetson CPU and GPU share unified memory, so NVMe swap is not extra GPU memory an
 
 ### What is next
 
-The production roadmap adds a durable round ledger and reboot resume, thermal/swap-growth guards, adaptive context shrinking, independent/blinded evaluation, and signed remote policy. The immediate submission work is to capture the Alibaba Cloud deployment proof, complete the controlled Jetson deployment and offline demonstration, and publish the public repository and short demo video.
+The production roadmap adds a durable round ledger and reboot resume, thermal/swap-growth guards, adaptive context shrinking, independent/blinded evaluation, and signed remote policy. The immediate submission work is to capture the Alibaba Cloud deployment proof, complete the controlled Jetson deployment and offline demonstration, and publish the short demo video.
 
 ## Required custom fields
 
@@ -57,8 +57,8 @@ The production roadmap adds a durable round ledger and reboot resume, thermal/sw
 | Start date (MM-DD-YY) | `[USER INPUT]` |
 | Updates since May 26 | If Existing, describe only the significant post-May-26 work. If New, enter `Not applicable — project started during the submission period.` |
 | Track | `Track 5: EdgeAgent` |
-| Repository URL | `[PENDING: public repository]` |
-| Proof code URL | Link directly to `src/conglomeraite/config.py` where the QwenCloud base URL appears. After public deployment, also link `cloud/alibaba-telemetry/s.yaml` in the description. |
+| Repository URL | `https://github.com/Destr0yering/conglomeraite` |
+| Proof code URL | `https://github.com/Destr0yering/conglomeraite/blob/codex/hackathon-mvp/src/conglomeraite/config.py` shows the QwenCloud base URL. `https://github.com/Destr0yering/conglomeraite/blob/codex/hackathon-mvp/cloud/alibaba-telemetry/s.yaml` shows the Alibaba Function Compute service definition; runtime deployment evidence is still required. |
 | Architecture diagram | Upload `docs/architecture-diagram.svg`. |
 | Alibaba deployment screenshot | `[PENDING: Workbench resource plus successful Function Compute invocation/log]` |
 | Blog/social URL | Optional; required only for the blog bonus prize. |

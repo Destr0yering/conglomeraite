@@ -134,7 +134,7 @@ The harness reports a descriptive one-shot baseline and a stronger single-agent 
 
 Do not claim a swarm efficiency improvement until it is measured. Use the included benchmark harness with the same corpus, model, and token/wall-clock budget for both the single-agent and swarm modes. Publish raw JSON/CSV, the commands used, p50/p95 latency, token/cost totals, peak memory, quality score, completion rate, and failover recovery—not only a favorable average.
 
-The Devpost package still needs real-world evidence that code generation cannot create: an Alibaba Cloud Workbench screenshot, a public repository URL, target-device benchmark results, and a public approximately three-minute working demo. The architecture upload is ready as [docs/architecture-diagram.svg](docs/architecture-diagram.svg). The exact shot list is in [the submission checklist](docs/submission-checklist.md), and the three-paragraph copy is in [the Devpost pitch](docs/devpost-pitch.md).
+The public source repository is available at [github.com/Destr0yering/conglomeraite](https://github.com/Destr0yering/conglomeraite). The Devpost package still needs real-world evidence that code generation cannot create: an Alibaba Cloud Workbench screenshot, target-device benchmark results, and a public approximately three-minute working demo. The architecture upload is ready as [docs/architecture-diagram.svg](docs/architecture-diagram.svg). The exact shot list is in [the submission checklist](docs/submission-checklist.md), and the three-paragraph copy is in [the Devpost pitch](docs/devpost-pitch.md).
 
 ## Repository map
 
