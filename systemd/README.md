@@ -4,7 +4,9 @@ These files add a bounded ConglomerAIte task unit and an optional resource-contr
 
 ## Observed Nano profile
 
-The 2026-07-18 read-only preflight found `sysop-qwen-bridge.service` and `llama.service` active, while `llama-safe.service` was inactive. The active `llama.service` has no `MemoryHigh`, `MemoryMax`, `MemorySwapMax`, or `OOMScoreAdjust` controls and binds port 8080 to `0.0.0.0`; `nano-8080-firewall.service` was failed. Do not install the `llama-safe.service.d` drop-in or use `--restart-llama` as though it protected the active model. Resolve the active-service identity, port containment, and resource limits in an explicitly approved maintenance window.
+The 2026-07-18 read-only preflight found `sysop-qwen-bridge.service` and `llama.service` active, while `llama-safe.service` was inactive. The active `llama.service` had no `MemoryHigh`, `MemoryMax`, `MemorySwapMax`, or `OOMScoreAdjust` controls and bound port 8080 to `0.0.0.0`; `nano-8080-firewall.service` was failed.
+
+`llama.service.d/20-conglomeraite-resources.conf` is therefore a target-specific migration for that observed unit. It preserves the exact pinned model, context, GPU-layer, thread, batch, and parallel arguments; changes only the listener to `127.0.0.1`; and applies the documented slice, memory, swap, task, restart, and OOM policy. Do not install it on a different model layout without first reconciling the complete `ExecStart`. Back up the existing unit state, apply it only in an approved maintenance window, restart `llama.service`, and require both the llama and SYSOP bridge health checks to pass. Remove the drop-in and restart the service if either check fails.
 
 ## Install and tune
 
