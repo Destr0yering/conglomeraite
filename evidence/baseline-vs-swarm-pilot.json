@@ -1,0 +1,308 @@
+{
+  "description": "Observed one-shot and budget-matched single-agent baselines versus swarm; same-critic post-hoc evaluator calls are excluded from work cost",
+  "records": [
+    {
+      "budget_matched_single_agent": {
+        "budget": {
+          "max_calls": 4,
+          "max_output_tokens": 1952,
+          "max_wall_ms": 41164.919000002556,
+          "note": "in-flight requests are not cancelled, so wall/token ceilings are soft",
+          "token_budget_enforced": true
+        },
+        "score": 9.0,
+        "work": {
+          "input_tokens": 1859,
+          "latency_ms": 51360.49859999912,
+          "model_calls": 3,
+          "output_tokens": 2562,
+          "route_attempts": 3,
+          "usage_coverage": 1.0
+        }
+      },
+      "comparison": {
+        "swarm_vs_budget_matched": {
+          "call_ratio_swarm_over_baseline": 1.3333333333333333,
+          "latency_ratio_swarm_over_baseline": 0.8014898632624112,
+          "output_token_ratio_swarm_over_baseline": 0.7619047619047619,
+          "quality_score_gain": 0.0,
+          "swarm_quality_gain_per_extra_call": 0.0
+        },
+        "swarm_vs_one_shot": {
+          "call_ratio_swarm_over_baseline": 4.0,
+          "latency_ratio_swarm_over_baseline": 4.2338989771129,
+          "output_token_ratio_swarm_over_baseline": 4.4063205417607225,
+          "quality_score_gain": 0.0,
+          "swarm_quality_gain_per_extra_call": 0.0
+        }
+      },
+      "evaluation": {
+        "design": "same-critic-post-hoc",
+        "independent": false,
+        "model_calls": 3,
+        "usage_coverage": 1.0
+      },
+      "id": "recovery-plan-01",
+      "mode": "qwen-cloud-primary-with-local-fallback",
+      "one_shot_baseline": {
+        "score": 9.0,
+        "work": {
+          "input_tokens": 205,
+          "latency_ms": 9722.697499993956,
+          "model_calls": 1,
+          "output_tokens": 443,
+          "route_attempts": 1,
+          "usage_coverage": 1.0
+        }
+      },
+      "status": "ok",
+      "swarm": {
+        "score": 9.0,
+        "status": "consensus",
+        "stop_reason": "critic score 10/10 reached target 10/10",
+        "work": {
+          "input_tokens": 3882,
+          "latency_ms": 41164.919000002556,
+          "model_calls": 4,
+          "output_tokens": 1952,
+          "route_attempts": 4,
+          "usage_coverage": 1.0
+        }
+      },
+      "task_sha256": "c460e7b8c8cc584ea021f2f32f3a4bcf2454314e10f0b37c36213cfd8a998a97"
+    },
+    {
+      "budget_matched_single_agent": {
+        "budget": {
+          "max_calls": 4,
+          "max_output_tokens": 1865,
+          "max_wall_ms": 39359.32650000905,
+          "note": "in-flight requests are not cancelled, so wall/token ceilings are soft",
+          "token_budget_enforced": true
+        },
+        "score": 9.0,
+        "work": {
+          "input_tokens": 2421,
+          "latency_ms": 49556.67479999829,
+          "model_calls": 4,
+          "output_tokens": 2430,
+          "route_attempts": 4,
+          "usage_coverage": 1.0
+        }
+      },
+      "comparison": {
+        "swarm_vs_budget_matched": {
+          "call_ratio_swarm_over_baseline": 1.0,
+          "latency_ratio_swarm_over_baseline": 0.7942285607106634,
+          "output_token_ratio_swarm_over_baseline": 0.7674897119341564,
+          "quality_score_gain": -1.0,
+          "swarm_quality_gain_per_extra_call": null
+        },
+        "swarm_vs_one_shot": {
+          "call_ratio_swarm_over_baseline": 4.0,
+          "latency_ratio_swarm_over_baseline": 4.05508963411355,
+          "output_token_ratio_swarm_over_baseline": 4.181614349775785,
+          "quality_score_gain": 0.0,
+          "swarm_quality_gain_per_extra_call": 0.0
+        }
+      },
+      "evaluation": {
+        "design": "same-critic-post-hoc",
+        "independent": false,
+        "model_calls": 3,
+        "usage_coverage": 1.0
+      },
+      "id": "offline-route-01",
+      "mode": "qwen-cloud-primary-with-local-fallback",
+      "one_shot_baseline": {
+        "score": 8.0,
+        "work": {
+          "input_tokens": 216,
+          "latency_ms": 9706.15449998877,
+          "model_calls": 1,
+          "output_tokens": 446,
+          "route_attempts": 1,
+          "usage_coverage": 1.0
+        }
+      },
+      "status": "ok",
+      "swarm": {
+        "score": 8.0,
+        "status": "consensus",
+        "stop_reason": "critic score 10/10 reached target 10/10",
+        "work": {
+          "input_tokens": 3772,
+          "latency_ms": 39359.32650000905,
+          "model_calls": 4,
+          "output_tokens": 1865,
+          "route_attempts": 4,
+          "usage_coverage": 1.0
+        }
+      },
+      "task_sha256": "e8489a3c3f87151462405251ba52d9c46c36800651fdcccbab31db9c2c3837d0"
+    },
+    {
+      "budget_matched_single_agent": {
+        "budget": {
+          "max_calls": 2,
+          "max_output_tokens": 934,
+          "max_wall_ms": 19858.065400010673,
+          "note": "in-flight requests are not cancelled, so wall/token ceilings are soft",
+          "token_budget_enforced": true
+        },
+        "score": 10.0,
+        "work": {
+          "input_tokens": 890,
+          "latency_ms": 25092.818000004627,
+          "model_calls": 2,
+          "output_tokens": 1211,
+          "route_attempts": 2,
+          "usage_coverage": 1.0
+        }
+      },
+      "comparison": {
+        "swarm_vs_budget_matched": {
+          "call_ratio_swarm_over_baseline": 1.0,
+          "latency_ratio_swarm_over_baseline": 0.7913844272096905,
+          "output_token_ratio_swarm_over_baseline": 0.7712634186622626,
+          "quality_score_gain": 0.0,
+          "swarm_quality_gain_per_extra_call": null
+        },
+        "swarm_vs_one_shot": {
+          "call_ratio_swarm_over_baseline": 2.0,
+          "latency_ratio_swarm_over_baseline": 1.8509384468444454,
+          "output_token_ratio_swarm_over_baseline": 1.782442748091603,
+          "quality_score_gain": 0.0,
+          "swarm_quality_gain_per_extra_call": 0.0
+        }
+      },
+      "evaluation": {
+        "design": "same-critic-post-hoc",
+        "independent": false,
+        "model_calls": 3,
+        "usage_coverage": 1.0
+      },
+      "id": "incident-summary-01",
+      "mode": "qwen-cloud-primary-with-local-fallback",
+      "one_shot_baseline": {
+        "score": 10.0,
+        "work": {
+          "input_tokens": 203,
+          "latency_ms": 10728.647099997033,
+          "model_calls": 1,
+          "output_tokens": 524,
+          "route_attempts": 1,
+          "usage_coverage": 1.0
+        }
+      },
+      "status": "ok",
+      "swarm": {
+        "score": 10.0,
+        "status": "consensus",
+        "stop_reason": "critic score 10/10 reached target 10/10",
+        "work": {
+          "input_tokens": 1211,
+          "latency_ms": 19858.065400010673,
+          "model_calls": 2,
+          "output_tokens": 934,
+          "route_attempts": 2,
+          "usage_coverage": 1.0
+        }
+      },
+      "task_sha256": "7047a6b6a2c38096cb6f64583f42bd6dc26663cd54427e4e715f4e6f47900db9"
+    }
+  ],
+  "run_metadata": {
+    "config": {
+      "cloud_cooldown_s": 30.0,
+      "cloud_failure_threshold": 2,
+      "cloud_retries": 0,
+      "cloud_retry_delay_cap_s": 2.0,
+      "fallback_retries": 1,
+      "fallback_retry_delay_s": 0.25,
+      "local": {
+        "api_key": null,
+        "endpoint": "http://127.0.0.1:8080/v1",
+        "max_response_bytes": 1048576,
+        "max_tokens": 768,
+        "model": "qwen.gguf",
+        "timeout_s": 90.0
+      },
+      "loop": {
+        "critic_parse_retries": 1,
+        "critic_temperature": 0.0,
+        "generator_temperature": 0.35,
+        "max_elapsed_s": 120.0,
+        "max_iterations": 3,
+        "max_stagnant_iterations": 2,
+        "target_score": 10.0
+      },
+      "max_rubric_chars": 8192,
+      "max_task_chars": 32768,
+      "memory": {
+        "max_gpu_used_fraction": 0.92,
+        "max_used_fraction": 0.88,
+        "min_available_mb": 768.0,
+        "monitor_required": false,
+        "sample_timeout_s": 1.5,
+        "tegrastats_interval_ms": 500
+      },
+      "offline": false,
+      "qwen": {
+        "api_key": "***",
+        "endpoint": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+        "max_response_bytes": 1048576,
+        "max_tokens": 1536,
+        "model": "qwen-plus",
+        "timeout_s": 45.0
+      }
+    },
+    "evaluation": "same configured Critic/provider policy; no evaluator independence",
+    "mode": "qwen-cloud-primary-with-local-fallback",
+    "models": {
+      "local": "qwen.gguf",
+      "qwen": "qwen-plus"
+    },
+    "router_state": "fresh router/circuit per arm and evaluator call"
+  },
+  "schema_version": "1.0",
+  "summary": {
+    "budget_matched_quality_noninferior_and_faster_rate": 0.6666666666666666,
+    "budget_matched_quality_noninferior_and_fewer_output_tokens_rate": 0.6666666666666666,
+    "budget_matched_quality_noninferior_rate": 0.6666666666666666,
+    "budget_matched_swarm_win_rate": 0.0,
+    "note": "Fairness claims should use the budget-matched comparison on representative tasks; the one-shot comparison is descriptive only and no gain is assumed.",
+    "swarm_vs_budget_matched_call_ratio": {
+      "mean": 1.111111111111111,
+      "n": 3,
+      "p50": 1.0,
+      "p95": 1.2999999999999998
+    },
+    "swarm_vs_budget_matched_latency_ratio": {
+      "mean": 0.795700950394255,
+      "n": 3,
+      "p50": 0.7942285607106634,
+      "p95": 0.8007637330072364
+    },
+    "swarm_vs_budget_matched_output_token_ratio": {
+      "mean": 0.7668859641670602,
+      "n": 3,
+      "p50": 0.7674897119341564,
+      "p95": 0.7708860479894519
+    },
+    "swarm_vs_budget_matched_quality_gain": {
+      "mean": -0.3333333333333333,
+      "n": 3,
+      "p50": 0.0,
+      "p95": 0.0
+    },
+    "swarm_vs_one_shot_quality_gain": {
+      "mean": 0.0,
+      "n": 3,
+      "p50": 0.0,
+      "p95": 0.0
+    },
+    "tasks_completed": 3,
+    "tasks_total": 3
+  }
+}

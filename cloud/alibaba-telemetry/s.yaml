@@ -1,0 +1,25 @@
+edition: 3.0.0
+name: conglomeraite-telemetry
+access: default
+
+resources:
+  telemetryReceiver:
+    component: fc3
+    props:
+      region: ${env.ALIBABA_CLOUD_REGION}
+      functionName: conglomeraite-telemetry
+      description: Signed metadata-only ConglomerAIte telemetry receiver
+      runtime: python3.10
+      code: ./
+      handler: index.handler
+      timeout: 10
+      memorySize: 256
+      environmentVariables:
+        TELEMETRY_HMAC_SECRET: ${env.TELEMETRY_HMAC_SECRET}
+      triggers:
+        - triggerName: telemetry-http
+          triggerType: http
+          triggerConfig:
+            authType: anonymous
+            methods:
+              - POST

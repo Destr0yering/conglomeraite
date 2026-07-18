@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">ConglomerAIte edge-cloud fault-tolerant multi-agent architecture</title>
+  <desc id="desc">SYSOP routes tasks through a circuit breaker to QwenCloud or a local Qwen model. Generator and Critic refine sequentially until validated consensus or a safety boundary. Jetson memory telemetry and systemd cgroups contain resource pressure.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071426"/>
+      <stop offset="1" stop-color="#102445"/>
+    </linearGradient>
+    <linearGradient id="cloud" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6d4aff"/>
+      <stop offset="1" stop-color="#a54df0"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f9f85"/>
+      <stop offset="1" stop-color="#19c37d"/>
+    </linearGradient>
+    <linearGradient id="agent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1677ff"/>
+      <stop offset="1" stop-color="#22a7f0"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000814" flood-opacity="0.45"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#bcd2f5"/>
+    </marker>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#c99cff"/>
+    </marker>
+    <style>
+      .title { font: 700 40px Inter, Segoe UI, Arial, sans-serif; fill: #f7fbff; }
+      .subtitle { font: 400 20px Inter, Segoe UI, Arial, sans-serif; fill: #b9cbe5; }
+      .zone { font: 700 18px Inter, Segoe UI, Arial, sans-serif; letter-spacing: 2px; fill: #8da8cd; }
+      .node-title { font: 700 22px Inter, Segoe UI, Arial, sans-serif; fill: white; }
+      .node-copy { font: 400 16px Inter, Segoe UI, Arial, sans-serif; fill: #eaf3ff; }
+      .small { font: 500 14px Inter, Segoe UI, Arial, sans-serif; fill: #bcd2f5; }
+      .edge-label { font: 600 14px Inter, Segoe UI, Arial, sans-serif; fill: #d7e7ff; }
+      .neutral { fill: #142d50; stroke: #3f628d; stroke-width: 2; }
+      .outline { fill: none; stroke: #355476; stroke-width: 2; stroke-dasharray: 8 8; }
+      .line { fill: none; stroke: #bcd2f5; stroke-width: 3; marker-end: url(#arrow); }
+      .feedback { fill: none; stroke: #c99cff; stroke-width: 4; marker-end: url(#arrowPurple); }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1410" cy="85" r="260" fill="#6d4aff" opacity="0.10"/>
+  <circle cx="185" cy="810" r="260" fill="#19c37d" opacity="0.08"/>
+
+  <text x="70" y="70" class="title">The ConglomerAIte™</text>
+  <text x="70" y="105" class="subtitle">Fault-tolerant swarm intelligence • QwenCloud primary • Jetson edge fallback • bounded 10/10 refinement</text>
+
+  <rect x="55" y="135" width="1490" height="695" rx="28" class="outline"/>
+  <line x1="55" y1="345" x2="1545" y2="345" stroke="#355476" stroke-width="2" stroke-dasharray="8 8"/>
+  <text x="80" y="172" class="zone">ALIBABA CLOUD REASONING PLANE</text>
+  <text x="80" y="382" class="zone">JETSON ORIN NANO EDGE CONTROL PLANE</text>
+
+  <g filter="url(#shadow)">
+    <rect x="95" y="445" width="265" height="145" rx="20" class="neutral"/>
+    <text x="125" y="486" class="node-title">SYSOP Workflow Engine</text>
+    <text x="125" y="522" class="node-copy">Task + rubric + policy</text>
+    <text x="125" y="551" class="node-copy">Deadline + safety budget</text>
+    <text x="125" y="577" class="small">Filesystem-safe task ID</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="445" y="420" width="300" height="190" rx="22" class="neutral"/>
+    <text x="482" y="465" class="node-title">Health-aware Router</text>
+    <text x="482" y="502" class="node-copy">Closed → QwenCloud</text>
+    <text x="482" y="531" class="node-copy">Open → local Qwen</text>
+    <text x="482" y="560" class="node-copy">Half-open → one probe</text>
+    <text x="482" y="590" class="small">Bounded retries • cooldown • trace</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="450" y="205" width="290" height="110" rx="22" fill="url(#cloud)"/>
+    <text x="485" y="248" class="node-title">QwenCloud API</text>
+    <text x="485" y="281" class="node-copy">Heavy reasoning • primary route</text>
+    <text x="485" y="305" class="small">OpenAI-compatible Model Studio</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="440" y="675" width="310" height="110" rx="22" fill="url(#edge)"/>
+    <text x="477" y="718" class="node-title">SYSOP Qwen Bridge</text>
+    <text x="477" y="751" class="node-copy">AI Engineer ↔ Code Reviewer</text>
+    <text x="477" y="776" class="small">127.0.0.1:8790 • llama.service</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="850" y="420" width="255" height="150" rx="22" fill="url(#agent)"/>
+    <text x="890" y="465" class="node-title">Generator</text>
+    <text x="890" y="501" class="node-copy">Create / revise candidate</text>
+    <text x="890" y="530" class="node-copy">Apply targeted deltas</text>
+    <text x="890" y="556" class="small">Sequential on edge</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1220" y="420" width="255" height="150" rx="22" fill="url(#agent)"/>
+    <text x="1264" y="465" class="node-title">Critic</text>
+    <text x="1264" y="501" class="node-copy">Score fixed rubric</text>
+    <text x="1264" y="530" class="node-copy">Return blocking issues</text>
+    <text x="1264" y="556" class="small">Strict consensus schema</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="850" y="675" width="265" height="110" rx="22" class="neutral"/>
+    <text x="888" y="718" class="node-title">Safety Sentinel</text>
+    <text x="888" y="751" class="node-copy">tegrastats • MemAvailable</text>
+    <text x="888" y="776" class="small">cgroup • optional NVML</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1210" y="675" width="275" height="110" rx="22" class="neutral"/>
+    <text x="1247" y="718" class="node-title">Bounded Result</text>
+    <text x="1247" y="751" class="node-copy">Best draft + score + reason</text>
+    <text x="1247" y="776" class="small">Metadata trace • protected output</text>
+  </g>
+
+  <path d="M 360 515 L 445 515" class="line"/>
+  <text x="374" y="496" class="edge-label">task envelope</text>
+
+  <path d="M 590 420 L 590 315" class="line"/>
+  <text x="605" y="370" class="edge-label">healthy</text>
+  <path d="M 595 610 L 595 675" class="line"/>
+  <text x="610" y="652" class="edge-label">offline / open</text>
+
+  <path d="M 740 260 C 810 260 785 475 850 475" class="line"/>
+  <path d="M 750 730 C 810 730 790 525 850 525" class="line"/>
+  <path d="M 1105 495 L 1220 495" class="line"/>
+  <text x="1133" y="476" class="edge-label">candidate</text>
+
+  <path d="M 1345 420 C 1345 350 975 350 975 420" class="feedback"/>
+  <text x="1062" y="337" class="edge-label">score &lt; 10 + targeted refinements</text>
+
+  <path d="M 1345 570 L 1345 675" class="line"/>
+  <text x="1360" y="628" class="edge-label">validated 10/10</text>
+
+  <path d="M 985 675 L 985 570" class="line"/>
+  <text x="1000" y="632" class="edge-label">continue / trip</text>
+  <path d="M 1115 730 L 1210 730" class="line"/>
+  <text x="1128" y="711" class="edge-label">safe stop</text>
+
+  <rect x="810" y="205" width="675" height="110" rx="20" class="neutral" opacity="0.82"/>
+  <text x="845" y="247" class="node-title">Optional Alibaba telemetry gateway</text>
+  <text x="845" y="280" class="node-copy">Receives signed, redacted route / score / latency events • never required for offline control</text>
+  <text x="845" y="305" class="small">Deploy and capture Workbench proof before submission</text>
+
+  <text x="75" y="865" class="small">Safety exits: consensus • memory pressure • deadline • stagnation • iteration limit • provider unavailable</text>
+  <text x="1120" y="865" class="small">Track 5 EdgeAgent + Track 3 Agent Society mechanics</text>
+</svg>

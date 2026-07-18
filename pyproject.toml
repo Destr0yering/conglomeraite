@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "conglomeraite"
+version = "0.1.0"
+description = "Fault-tolerant QwenCloud-to-edge multi-agent refinement loop"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+jetson = ["nvidia-ml-py>=12"]
+test = ["pytest>=8"]
+
+[project.scripts]
+conglomeraite = "conglomeraite.cli:main"
+conglomeraite-benchmark = "conglomeraite.benchmark:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]

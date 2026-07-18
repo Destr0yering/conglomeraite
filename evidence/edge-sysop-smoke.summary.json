@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "evidence_type": "jetson-sysop-bridge-smoke",
+  "observed_on": "2026-07-18",
+  "node": "destro-desktop",
+  "result": {
+    "status": "ok",
+    "role_id": "agency_ai_engineer",
+    "context_profile": "runtime_health",
+    "response_contract": "SYSOP_EDGE_OK",
+    "bridge_latency_ms": 36411,
+    "input_tokens": 1497,
+    "max_output_tokens": 384,
+    "listener_scope": "local"
+  },
+  "post_call_snapshot": {
+    "ram_total_mb": 7619,
+    "ram_available_mb": 2683,
+    "swap_total_mb": 3809,
+    "swap_used_mb": 1684,
+    "tegrastats_ram_used_mb": 5060,
+    "tegrastats_ram_total_mb": 7620,
+    "gpu_temperature_c": 46.968,
+    "gr3d_frequency_percent": 0,
+    "llama_service_memory_current_bytes": 2267234304,
+    "bridge_service_memory_current_bytes": 13492224
+  },
+  "service_state": {
+    "sysop_qwen_bridge": "active",
+    "llama_service": "active",
+    "llama_safe_service": "inactive"
+  },
+  "known_blockers": [
+    "The active llama.service has no MemoryHigh, MemoryMax, MemorySwapMax, or OOMScoreAdjust controls.",
+    "llama.service currently binds port 8080 to 0.0.0.0 and nano-8080-firewall.service is failed.",
+    "No forced network-loss or end-to-end ConglomerAIte failover run has been performed on the Nano yet."
+  ]
+}

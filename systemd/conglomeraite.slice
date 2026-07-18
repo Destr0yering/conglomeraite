@@ -1,0 +1,13 @@
+[Unit]
+Description=ConglomerAIte aggregate resource boundary
+Documentation=file:/opt/conglomeraite/current/docs/architecture.md
+
+[Slice]
+CPUAccounting=yes
+MemoryAccounting=yes
+TasksAccounting=yes
+# 8 GB Jetson starting point. These are cgroup ceilings, not reservations.
+MemoryHigh=5632M
+MemoryMax=6400M
+MemorySwapMax=4096M
+TasksMax=384

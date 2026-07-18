@@ -1,0 +1,38 @@
+{
+  "qwen": {
+    "kind": "openai",
+    "endpoint": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+    "model": "qwen-plus",
+    "timeout_s": 45.0,
+    "max_tokens": 1024
+  },
+  "local": {
+    "kind": "sysop_bridge",
+    "endpoint": "http://127.0.0.1:8790",
+    "model": "sysop-agents",
+    "timeout_s": 90.0,
+    "max_tokens": 768
+  },
+  "loop": {
+    "target_score": 10.0,
+    "max_iterations": 6,
+    "max_elapsed_s": 300.0,
+    "critic_parse_retries": 1,
+    "max_stagnant_iterations": 2,
+    "generator_temperature": 0.35,
+    "critic_temperature": 0.0
+  },
+  "memory": {
+    "max_used_fraction": 0.88,
+    "min_available_mb": 768.0,
+    "max_gpu_used_fraction": 0.92,
+    "monitor_required": true,
+    "tegrastats_interval_ms": 500,
+    "sample_timeout_s": 1.5
+  },
+  "cloud_failure_threshold": 2,
+  "cloud_cooldown_s": 30.0,
+  "cloud_retries": 0,
+  "cloud_retry_delay_cap_s": 2.0,
+  "offline": false
+}

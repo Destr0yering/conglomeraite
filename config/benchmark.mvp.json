@@ -1,0 +1,44 @@
+{
+  "qwen": {
+    "kind": "openai",
+    "endpoint": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+    "model": "qwen-plus",
+    "timeout_s": 45.0,
+    "max_tokens": 1536,
+    "max_response_bytes": 1048576
+  },
+  "local": {
+    "kind": "openai",
+    "endpoint": "http://127.0.0.1:8080/v1",
+    "model": "qwen.gguf",
+    "timeout_s": 90.0,
+    "max_tokens": 768,
+    "max_response_bytes": 1048576
+  },
+  "loop": {
+    "target_score": 10.0,
+    "max_iterations": 3,
+    "max_elapsed_s": 120.0,
+    "critic_parse_retries": 1,
+    "max_stagnant_iterations": 2,
+    "generator_temperature": 0.35,
+    "critic_temperature": 0.0
+  },
+  "memory": {
+    "max_used_fraction": 0.88,
+    "min_available_mb": 768.0,
+    "max_gpu_used_fraction": 0.92,
+    "monitor_required": false,
+    "tegrastats_interval_ms": 500,
+    "sample_timeout_s": 1.5
+  },
+  "cloud_failure_threshold": 2,
+  "cloud_cooldown_s": 30.0,
+  "cloud_retries": 0,
+  "cloud_retry_delay_cap_s": 2.0,
+  "fallback_retries": 1,
+  "fallback_retry_delay_s": 0.25,
+  "max_task_chars": 32768,
+  "max_rubric_chars": 8192,
+  "offline": false
+}

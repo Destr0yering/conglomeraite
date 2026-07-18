@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "evidence_type": "live-qwencloud-convergence-smoke",
+  "observed_on": "2026-07-18",
+  "environment": "Windows development laptop; QwenCloud primary; local fallback not invoked",
+  "model": "qwen-plus",
+  "result": {
+    "status": "consensus",
+    "scores_by_iteration": [8.0, 10.0],
+    "best_iteration": 2,
+    "model_calls": 4,
+    "route_attempts": 4,
+    "degraded_calls": 0,
+    "input_tokens": 3890,
+    "output_tokens": 1970,
+    "usage_coverage": 1.0,
+    "provider_latency_ms": 41531.24319999188,
+    "wall_elapsed_ms": 41541.03659999964,
+    "generator_finish_reasons": ["stop", "stop"]
+  },
+  "claim_limits": [
+    "This smoke run proves cloud-backed convergence for one task, not population-level quality.",
+    "It does not prove Jetson memory safety or cloud-to-edge failover because the local route was not invoked.",
+    "Full text remains in the ignored local artifact artifacts/live-cloud-smoke-v3.json."
+  ]
+}
