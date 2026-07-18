@@ -37,16 +37,16 @@ Audited against the live Devpost account and submission fields on **2026-07-18**
 ## Critical blockers before submission
 
 - [x] **Create the public repository.** `https://github.com/Destr0yering/conglomeraite` is attached as `origin`.
-- [ ] **Install/provide `rsync` for deployment.** Git Bash is present, but its current installation does not include `rsync`; the staged deploy script cannot run from this laptop yet.
+- [x] **Complete package transport and activation.** The controlled release used the staged archive/SSH path because this laptop's Git Bash lacked `rsync`; the repository still retains the `rsync` deployment path for a fully provisioned operator workstation.
 - [x] **Create the Devpost project.** Public project `the-conglomeraite` exists; it is not entered into or submitted to the hackathon.
-- [ ] **Deploy on Alibaba Cloud.** `cloud/alibaba-telemetry/` is tested source only; it is not deployed.
-- [ ] **Sign in to Alibaba Cloud in the in-app Browser.** The console is open as a handoff tab, but the browser session is currently signed out.
-- [ ] **Capture Workbench proof.** Save a judge-safe screenshot showing the running Alibaba resource and successful invocation/log.
-- [ ] **Complete a controlled Jetson deployment.** Direct SYSOP dispatch and the ConglomerAIte systemd task have not run end-to-end on the Nano.
-- [ ] **Resolve model-service containment.** The Nano currently runs unrestricted `llama.service`, not the protected `llama-safe.service`; port 8080 exposure/firewall state also needs an approved maintenance decision.
-- [ ] **Demonstrate edge degradation.** Cloud and local paths were tested separately, but a single task has not yet continued through a forced network loss on the Nano.
-- [ ] **Record and publish the demo.** Use public YouTube or Vimeo and keep the video under three minutes.
-- [ ] **Upload the architecture SVG** to the submission form.
+- [x] **Deploy on Alibaba Cloud.** `conglomeraite-telemetry` is live in Function Compute `cn-hangzhou`; sanitized verification is in `evidence/alibaba-function-compute.summary.json`.
+- [x] **Sign in to Alibaba Cloud in the in-app Browser.** Deployment and trigger configuration were completed in the authenticated console.
+- [x] **Capture Workbench proof.** Judge-safe Workbench, endpoint, and trigger-authentication screenshots are under `artifacts/`.
+- [x] **Complete a controlled Jetson deployment.** Release `20260718T143606Z-321630888163` was activated and exercised through the systemd task path.
+- [x] **Resolve model-service containment.** The active `llama.service` remains the single model owner but is now loopback-only with measured `MemoryHigh`, `MemoryMax`, `MemorySwapMax`, and `OOMScoreAdjust=500` controls.
+- [x] **Demonstrate edge degradation.** A zero-paid-call forced cloud failure produced two degraded SYSOP-bridge calls, retained the best candidate, and stopped at the bounded provider/deadline boundary.
+- [x] **Render the demo.** The narrated evidence-based cut is 2:47 at `artifacts/conglomeraite-demo.mp4`; a YouTube/Vimeo mirror is still required for Devpost's embed field.
+- [x] **Upload the architecture diagram.** `artifacts/architecture-diagram.png` is live as the Devpost project thumbnail; the PNG/SVG remain ready for any submission-gallery field.
 - [ ] **Fill every required field and submit** before the deadline; do not wait until the final hour.
 
 ## Live Devpost field checklist
@@ -61,8 +61,8 @@ Audited against the live Devpost account and submission fields on **2026-07-18**
 - [ ] Select **Track 5: EdgeAgent**. Explain the Track 3 Agent Society mechanics in the description; the form accepts one track.
 - [x] Public open-source repository URL: `https://github.com/Destr0yering/conglomeraite`.
 - [x] Direct URL to `src/conglomeraite/config.py` showing the QwenCloud base URL.
-- [ ] Architecture diagram file.
-- [ ] Alibaba Cloud Workbench screenshot.
+- [x] Architecture diagram file ready at `artifacts/architecture-diagram.png` and `docs/architecture-diagram.svg`; upload to Devpost remains.
+- [x] Alibaba Cloud Workbench and trigger screenshots ready under `artifacts/`; upload to Devpost remains.
 - [ ] Public demo video URL. A website and ZIP file are not required by the current form.
 - [ ] AI-tools disclosure — draft ready.
 - [ ] Learning level — user selection required.
@@ -74,24 +74,21 @@ Audited against the live Devpost account and submission fields on **2026-07-18**
 
 ## Evidence still needed for competitive claims
 
-- [ ] Target-device ConglomerAIte trace, not only a direct bridge smoke test.
-- [ ] Forced network-loss route transition with retained task state and `degraded=true`.
+- [x] Target-device ConglomerAIte trace: `evidence/nano-outage-demo.summary.json`.
+- [x] Forced cloud-loss route transition with retained best candidate and `degraded=true`.
 - [ ] Pre/post memory samples, `memory.events`, swap use, and service journal during the edge run.
-- [ ] Proof that the actual active model service has measured cgroup limits and adequate headroom, or an explicit disclosure that it does not.
-- [ ] Alibaba Function Compute resource view and a successful signed metadata-only invocation.
+- [x] Proof that the active model service has measured cgroup limits and post-run headroom is recorded in `evidence/nano-outage-demo.summary.json`.
+- [x] Alibaba Function Compute resource view and successful signed metadata-only invocation are recorded under `artifacts/` and `evidence/alibaba-function-compute.summary.json`.
 - [ ] Independent or blinded quality evaluation if claiming quality improvement.
 - [ ] More representative tasks if claiming general efficiency; the current three-task pilot supports only a narrow observation.
 - [ ] Exact model artifact, quantization, llama.cpp build, JetPack version, context, power mode, and network condition for reproduced edge numbers.
 
 ## Recommended execution order
 
-1. Decide the Nano maintenance window and whether to keep `llama.service` with new limits or migrate deliberately to `llama-safe.service`; never run both.
-2. Deploy the application with the `sysop-bridge` profile and capture a local-only, zero-paid-inference task trace after explicit approval.
-3. Deploy the metadata receiver to Alibaba Function Compute, invoke it with a signed metadata-only event, and capture Workbench/log proof.
-4. Record the under-three-minute demo using the existing shot plan: topology, 10/10 evidence, edge/offline continuation, memory containment, measured pilot, and Alibaba proof.
-5. Verify the public GitHub repository's MIT license/About section and test every public link in a private/incognito window.
-6. Finish the existing Devpost project submission: upload the diagram/screenshot, add the video, and complete the user-only eligibility fields.
-7. Submit early, reopen the public entry, verify the video/repository/files render without login, and retain a screenshot of the submitted state.
+1. Record the under-three-minute demo using the existing shot plan: topology, 10/10 evidence, edge/offline continuation, memory containment, measured pilot, and Alibaba proof.
+2. Verify the public GitHub repository's MIT license/About section and test every public link in a private/incognito window.
+3. Finish the existing Devpost project submission: upload the diagram/screenshots, add the video, and complete the user-only eligibility fields.
+4. Submit early, reopen the public entry, verify the video/repository/files render without login, and retain a screenshot of the submitted state.
 
 ## Three-minute demo shot plan
 
@@ -100,9 +97,9 @@ Audited against the live Devpost account and submission fields on **2026-07-18**
 3. **1:05–1:45 — Edge/offline behavior:** show an approved local-only task or pre-recorded forced-loss run, route/degraded flags, and retained state.
 4. **1:45–2:15 — Hardware safety:** show memory samples, cgroup settings, and a safe guard trip/replay without inducing an OOM.
 5. **2:15–2:40 — Measurements:** show the three-task pilot with its limitations, not a universal superiority claim.
-6. **2:40–2:55 — Alibaba proof:** Workbench resource, successful invocation log, and source link with the QwenCloud base URL.
+6. **2:40–2:55 — Alibaba proof:** Workbench resource, enabled HMAC-protected HTTP trigger, sanitized `200/401/202` invocation record, and source link with the QwenCloud base URL.
 7. **2:55–3:00 — Close:** ConglomerAIte tagline and Track 5 selection.
 
 ## Final claims guardrail
 
-Do not claim production OOM prevention, completed end-to-end failover, Alibaba deployment, or general multi-agent superiority until the corresponding evidence above exists. Report task count, models, quantization, context, network condition, power mode, measurement definition, and evaluator independence beside every quantitative claim.
+Do not claim production OOM prevention, an edge 10/10 consensus, or general multi-agent superiority. The controlled forced-cloud-loss run ended safely at 8/10, and the Alibaba receiver is verified independently rather than wired into the offline control path. Report task count, models, quantization, context, network condition, power mode, measurement definition, and evaluator independence beside every quantitative claim.

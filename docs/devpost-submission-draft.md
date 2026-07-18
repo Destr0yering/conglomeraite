@@ -12,11 +12,11 @@ Prepared on 2026-07-18 from the live QwenCloud hackathon submission fields. Repl
 
 **Repository URL:** https://github.com/Destr0yering/conglomeraite
 
-**Video URL:** `[PENDING: public YouTube or Vimeo URL, under three minutes]`
+**Video:** `artifacts/conglomeraite-demo.mp4` is a narrated 2:47 public-repository artifact. `[PENDING: YouTube or Vimeo mirror URL for the Devpost embed field]`
 
 **Devpost project:** https://devpost.com/software/the-conglomeraite (project ID 1349485; public, but not entered into or submitted to the hackathon)
 
-**Thumbnail:** `docs/assets/conglomeraite-devpost-thumbnail.png` (uploaded to the Devpost project)
+**Thumbnail:** `artifacts/architecture-diagram.png` (uploaded to the live Devpost project)
 
 ## Main description
 
@@ -36,7 +36,7 @@ The dependency-light Python core contains provider adapters, retry classificatio
 
 ### Evidence and results
 
-One paid QwenCloud development run demonstrated an 8/10 first draft reaching structurally valid 10/10 consensus in two rounds. A three-task pilot observed lower latency and fewer output tokens than a budget-matched single-agent self-refiner on quality-noninferior cases, but it did not establish a general quality advantage: one task regressed by one evaluator point and the evaluator was not independent. On the deployed Jetson, a zero-paid forced-loss task made three route attempts, degraded twice to the local SYSOP bridge, retained its best 8/10 candidate, and stopped at the 125.7-second safety boundary with both services healthy and zero model restarts. Raw, sanitized summaries and claim limits are committed under `evidence/`.
+One paid QwenCloud development run demonstrated an 8/10 first draft reaching structurally valid 10/10 consensus in two rounds. A three-task pilot observed lower latency and fewer output tokens than a budget-matched single-agent self-refiner on quality-noninferior cases, but it did not establish a general quality advantage: one task regressed by one evaluator point and the evaluator was not independent. On the deployed Jetson, a zero-paid forced-loss task made three route attempts, degraded twice to the local SYSOP bridge, retained its best 8/10 candidate, and stopped at the 125.7-second safety boundary with both services healthy and zero model restarts. The live Alibaba Function Compute receiver separately returned `200` for health, `401` for unsigned metadata, and `202` for one signed metadata-only event. Raw, sanitized summaries and claim limits are committed under `evidence/`.
 
 ### Challenges and lessons
 
@@ -44,7 +44,7 @@ Jetson CPU and GPU share unified memory, so NVMe swap is not extra GPU memory an
 
 ### What is next
 
-The production roadmap adds a durable round ledger and reboot resume, thermal/swap-growth guards, adaptive context shrinking, independent/blinded evaluation, and signed remote policy. The immediate submission work is to capture the Alibaba Cloud deployment proof and publish the short demo video.
+The production roadmap adds a durable round ledger and reboot resume, thermal/swap-growth guards, adaptive context shrinking, independent/blinded evaluation, and signed remote policy. Alibaba deployment proof is complete; the immediate submission work is to publish the short demo video, upload the ready images, and complete the entrant-only fields.
 
 ## Required custom fields
 
@@ -58,9 +58,9 @@ The production roadmap adds a durable round ledger and reboot resume, thermal/sw
 | Updates since May 26 | If Existing, describe only the significant post-May-26 work. If New, enter `Not applicable — project started during the submission period.` |
 | Track | `Track 5: EdgeAgent` |
 | Repository URL | `https://github.com/Destr0yering/conglomeraite` |
-| Proof code URL | `https://github.com/Destr0yering/conglomeraite/blob/codex/hackathon-mvp/src/conglomeraite/config.py` shows the QwenCloud base URL. `https://github.com/Destr0yering/conglomeraite/blob/codex/hackathon-mvp/cloud/alibaba-telemetry/s.yaml` shows the Alibaba Function Compute service definition; runtime deployment evidence is still required. |
+| Proof code URL | `https://github.com/Destr0yering/conglomeraite/blob/codex/hackathon-mvp/src/conglomeraite/config.py` shows the QwenCloud base URL. `https://github.com/Destr0yering/conglomeraite/blob/codex/hackathon-mvp/cloud/alibaba-telemetry/app_tiny.py` is the deployed Workbench receiver, and `evidence/alibaba-function-compute.summary.json` records the sanitized live verification. |
 | Architecture diagram | Upload `docs/architecture-diagram.svg`. |
-| Alibaba deployment screenshot | `[PENDING: Workbench resource plus successful Function Compute invocation/log]` |
+| Alibaba deployment screenshot | Upload `artifacts/alibaba-function-workbench-proof.png`, `artifacts/alibaba-function-trigger-endpoint-proof.png`, and `artifacts/alibaba-function-trigger-auth-proof.png`. |
 | Blog/social URL | Optional; required only for the blog bonus prize. |
 | AI tools used | `OpenAI Codex assisted with architecture review, implementation, test design, and documentation. QwenCloud qwen-plus powered the application's Generator/Critic development evidence. All deployment decisions, claims, and final submission materials were reviewed and controlled by the entrant.` |
 | Learning derived | Suggested: `Significant` — user must choose. |

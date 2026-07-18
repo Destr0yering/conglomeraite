@@ -12,7 +12,7 @@ The system does not promise that every task will reach a perfect answer. It enfo
 
 - **Track 5 — EdgeAgent (primary):** cloud/edge routing, forced-offline operation, local-only inference, metadata-only traces, and graceful degradation during network failure.
 - **Track 3 — Agent Society (differentiator):** isolated Generator and Critic roles, a fixed quality contract, explicit disagreement/refinement, and reproducible comparison against a single-agent baseline.
-- **Evidence-ready implementation:** QwenCloud's OpenAI-compatible endpoint is visible in source/config; the service and deployment files are designed for the Orin's shared-memory constraints. A real Alibaba deployment, target-device run, and screenshots are still required submission evidence.
+- **Evidence-ready implementation:** QwenCloud's OpenAI-compatible endpoint is visible in source/config; the service and deployment files are designed for the Orin's shared-memory constraints. The repository now includes sanitized evidence from the controlled Nano outage run and the live Alibaba Function Compute receiver. The public demo video and final Devpost uploads remain.
 
 Devpost currently permits one track selection in the submission form. Select Track 5 and describe the Track 3 mechanics in the project narrative. See [the live-submission checklist](docs/submission-checklist.md).
 
@@ -134,7 +134,7 @@ The harness reports a descriptive one-shot baseline and a stronger single-agent 
 
 Do not claim a swarm efficiency improvement until it is measured. Use the included benchmark harness with the same corpus, model, and token/wall-clock budget for both the single-agent and swarm modes. Publish raw JSON/CSV, the commands used, p50/p95 latency, token/cost totals, peak memory, quality score, completion rate, and failover recovery—not only a favorable average.
 
-The public source repository is available at [github.com/Destr0yering/conglomeraite](https://github.com/Destr0yering/conglomeraite). The Devpost package still needs real-world evidence that code generation cannot create: an Alibaba Cloud Workbench screenshot, target-device benchmark results, and a public approximately three-minute working demo. The architecture upload is ready as [docs/architecture-diagram.svg](docs/architecture-diagram.svg). The exact shot list is in [the submission checklist](docs/submission-checklist.md), and the three-paragraph copy is in [the Devpost pitch](docs/devpost-pitch.md).
+The public source repository is available at [github.com/Destr0yering/conglomeraite](https://github.com/Destr0yering/conglomeraite). Sanitized Nano and Alibaba deployment evidence is under `evidence/`, judge-safe Alibaba screenshots are under `artifacts/`, and the narrated 2:47 demo is [artifacts/conglomeraite-demo.mp4](artifacts/conglomeraite-demo.mp4). The architecture PNG is uploaded to the live Devpost project. A YouTube/Vimeo mirror and the entrant-only submission fields remain. The exact shot list is in [the submission checklist](docs/submission-checklist.md), and the three-paragraph copy is in [the Devpost pitch](docs/devpost-pitch.md).
 
 ## Repository map
 
@@ -142,7 +142,7 @@ The public source repository is available at [github.com/Destr0yering/conglomera
 - `config/` — secret-free example configuration
 - `systemd/` — orchestrator unit, local-model safety drop-in, environment template, install notes
 - `deploy/` — staged laptop-to-Jetson deployment
-- `cloud/alibaba-telemetry/` — undeployed HMAC-verified Function Compute metadata receiver scaffold
+- `cloud/alibaba-telemetry/` — HMAC-verified Function Compute metadata receiver and Workbench variant
 - `tests/` — deterministic parser, routing, memory, loop, and CLI tests
 - `docs/` — architecture, model choice, pitch, and submission evidence
 - `evidence/` — sanitized live cloud, benchmark, and Nano bridge observations

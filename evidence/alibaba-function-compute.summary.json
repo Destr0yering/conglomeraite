@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "observed_at": "2026-07-18T21:59:49Z",
+  "platform": "Alibaba Cloud Function Compute",
+  "region": "cn-hangzhou",
+  "function": "conglomeraite-telemetry",
+  "version": "LATEST",
+  "runtime": "Custom Runtime / Python 3.10 Web Function",
+  "public_endpoint": "https://conglomelemetry-bqmdrrmtus.cn-hangzhou.fcapp.run",
+  "trigger": {
+    "name": "defaultTrigger",
+    "type": "HTTP Trigger",
+    "enabled": true,
+    "platform_authentication": "No Authentication",
+    "application_authentication": "HMAC-SHA256(timestamp + '.' + raw_body)"
+  },
+  "verification": {
+    "health_status": 200,
+    "unsigned_metadata_status": 401,
+    "signed_metadata_status": 202,
+    "accepted_event_id": "evt-e89b2c74ca394495b0145e61"
+  },
+  "screenshots": [
+    "artifacts/alibaba-function-workbench-proof.png",
+    "artifacts/alibaba-function-trigger-endpoint-proof.png",
+    "artifacts/alibaba-function-trigger-auth-proof.png"
+  ],
+  "model_api_calls": 0,
+  "reusable_secrets_recorded": false,
+  "notes": [
+    "The receiver secret was rotated before verification.",
+    "Alibaba Log Service was not enabled because the console states that it incurs charges; proof uses the Workbench and trigger views plus the sanitized HTTP status record."
+  ]
+}

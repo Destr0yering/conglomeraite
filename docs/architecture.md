@@ -8,7 +8,7 @@ The design targets Track 5 (EdgeAgent) through offline continuation and hardware
 
 ### What is implemented versus proposed
 
-The repository implements the bounded Generator/Critic cycle, strict score parsing/10-with-no-blockers gate, best-candidate return, cloud-to-local routing, truncation rejection, rubric-stable refinement, a native SYSOP bridge provider, elapsed/iteration/stagnation bounds, and RAM checks from tegrastats, `/proc/meminfo`, finite cgroup limits, plus optional NVML. Direct SYSOP task dispatch, durable ledger/resume, thermal and swap-growth guards, adaptive context shrinking, and signed remote policy remain production extensions. A signed, metadata-only Alibaba Function Compute receiver is included as an undeployed scaffold.
+The repository implements the bounded Generator/Critic cycle, strict score parsing/10-with-no-blockers gate, best-candidate return, cloud-to-local routing, truncation rejection, rubric-stable refinement, a native SYSOP bridge provider, elapsed/iteration/stagnation bounds, and RAM checks from tegrastats, `/proc/meminfo`, finite cgroup limits, plus optional NVML. Direct SYSOP task dispatch, durable ledger/resume, thermal and swap-growth guards, adaptive context shrinking, and signed remote policy remain production extensions. The signed, metadata-only Alibaba Function Compute receiver is deployed and live-verified; wiring edge events to it remains an optional online-path extension.
 
 ```mermaid
 flowchart LR
@@ -24,7 +24,7 @@ flowchart LR
     C -->|validated 10/10| O[Atomic result file +\nmetadata-only trace]
     M[Jetson RAM sentinel] -->|continue / trip| R
     M -->|trip| O
-    T[Alibaba Function Compute receiver\nscaffold; not deployed/wired] -. redacted signed events .-> R
+    T[Alibaba Function Compute receiver\ndeployed; optional online telemetry] -. redacted signed events .-> R
 ```
 
 ## Task and result contracts
@@ -108,7 +108,7 @@ journalctl -u conglomeraite@task-42.service -f
 
 Using a Qwen model name alone is not evidence that inference ran on Alibaba Cloud. The demo should retain a redacted proof bundle per run: configured DashScope international endpoint, model ID, timestamps, request/correlation IDs exposed by the provider, route transitions, and the corresponding Model Studio usage view or bill screenshot. Never expose the API key or full sensitive payload.
 
-The repository includes `cloud/alibaba-telemetry/`, a minimal Function Compute HTTP receiver that verifies timestamped HMAC signatures, rejects unknown/content-bearing fields, and logs accepted metadata. It is a scaffold only: it is not deployed, not wired to the edge loop, and does not yet provide a dashboard, durable store, replay database, or signed policy distribution. Inference and safety decisions remain local when disconnected. A real Function Compute deployment, invocation logs, and screenshots are still required to close the hosted-backend proof gap.
+The repository includes `cloud/alibaba-telemetry/`, a minimal Function Compute HTTP receiver that verifies timestamped HMAC signatures and rejects unknown/content-bearing fields. On 2026-07-18 the Web Function was deployed in `cn-hangzhou`, the secret was rotated, and a live check returned `200` for health, `401` for unsigned metadata, and `202` for one correctly signed metadata-only event. The sanitized record is `evidence/alibaba-function-compute.summary.json`; judge-safe Workbench and trigger screenshots are under `artifacts/`. The receiver is not wired to the edge loop and does not provide a dashboard, durable store, replay database, or signed policy distribution. Inference and safety decisions remain local when disconnected. Paid Alibaba Log Service collection was deliberately left disabled.
 
 ## Evaluation plan: prove the gains
 

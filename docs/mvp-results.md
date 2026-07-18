@@ -28,4 +28,4 @@ Safe current claims:
 - A deployed Nano task continued through forced cloud loss on the local SYSOP bridge and stopped safely at its bounded deadline without an OOM or service restart.
 - On this three-task laptop pilot, the swarm used fewer output tokens and less wall time on quality-noninferior cases.
 
-Do not claim that the edge run reached 10/10, that systemd ceilings reserve CUDA memory, or that the three-task pilot proves general superiority. Alibaba Function Compute deployment, Workbench proof, external/blinded evaluation, and published footage remain open.
+Do not claim that the edge run reached 10/10, that systemd ceilings reserve CUDA memory, or that the three-task pilot proves general superiority. Alibaba Function Compute deployment and Workbench/trigger proof are complete; external/blinded evaluation and published footage remain open.

@@ -1,8 +1,8 @@
-# Alibaba Function Compute telemetry scaffold
+# Alibaba Function Compute telemetry receiver
 
 This directory is a minimal, deployable reference receiver for **redacted metadata only**. It verifies `HMAC-SHA256(timestamp + "." + raw_body)`, rejects requests more than five minutes old, rejects unknown/content-bearing fields, and writes accepted scalar events to Function Compute logs. It has no database, dashboard, replay database, or policy-distribution feature, and the edge loop does not send events to it yet.
 
-This source tree is not evidence of an Alibaba deployment. Before making that claim, deploy it in your Alibaba Cloud account, invoke it from a controlled demo client, retain the Function Compute resource/region view and invocation logs, and capture judge-safe screenshots. Rotate the demo secret afterward.
+The reference Web Function was deployed and live-verified in `cn-hangzhou` on 2026-07-18. The sanitized `200` health, `401` unsigned rejection, and `202` signed acceptance record is in `evidence/alibaba-function-compute.summary.json`; judge-safe Workbench and trigger screenshots are under `artifacts/`. The receiver secret was rotated before verification and is not stored in the repository. Paid Log Service collection was left disabled.
 
 ## Validate locally
 

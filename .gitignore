@@ -16,6 +16,11 @@ secrets/
 *.log
 artifacts/*
 !artifacts/.gitkeep
+!artifacts/architecture-diagram.png
+!artifacts/alibaba-function-workbench-proof.png
+!artifacts/alibaba-function-trigger-endpoint-proof.png
+!artifacts/alibaba-function-trigger-auth-proof.png
+!artifacts/conglomeraite-demo.mp4
 models/
 model-cache/
 *.gguf
