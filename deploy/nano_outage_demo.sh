@@ -119,10 +119,13 @@ rm -f -- "$trace" "$result" "$evidence"
 
 started_at="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 tegrastats_before="$(timeout 3 tegrastats --interval 500 2>/dev/null | head -n 1 || true)"
-set +e
-systemctl start "$unit"
-service_start_rc=$?
-set -e
+if systemctl start "$unit"; then
+  service_start_rc=0
+else
+  # A bounded provider/deadline stop is valid demo evidence. Capture the
+  # unit's non-zero result without triggering this script's ERR rollback trap.
+  service_start_rc=$?
+fi
 tegrastats_after="$(timeout 3 tegrastats --interval 500 2>/dev/null | head -n 1 || true)"
 completed_at="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 unit_result="$(systemctl show "$unit" -p Result --value 2>/dev/null || true)"
