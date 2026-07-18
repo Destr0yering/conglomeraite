@@ -14,9 +14,9 @@ Prepared on 2026-07-18 from the live QwenCloud hackathon submission fields. Repl
 
 **Video URL:** `[PENDING: public YouTube or Vimeo URL, under three minutes]`
 
-**Devpost draft:** https://devpost.com/software/the-conglomeraite (project ID 1349485; not submitted)
+**Devpost project:** https://devpost.com/software/the-conglomeraite (project ID 1349485; public, but not entered into or submitted to the hackathon)
 
-**Thumbnail:** `docs/assets/conglomeraite-devpost-thumbnail.png` (uploaded to the Devpost draft)
+**Thumbnail:** `docs/assets/conglomeraite-devpost-thumbnail.png` (uploaded to the Devpost project)
 
 ## Main description
 

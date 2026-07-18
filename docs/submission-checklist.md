@@ -1,6 +1,6 @@
 # QwenCloud Devpost submission checklist
 
-Audited against the live Devpost account and submission fields on **2026-07-18**. Submission closes **2026-07-20 at 2:00 PM Pacific / 5:00 PM Eastern (21:00 UTC)**. The account is registered and a ConglomerAIte project draft now exists, but it has not been submitted to the hackathon.
+Audited against the live Devpost account and submission fields on **2026-07-18**. Submission closes **2026-07-20 at 2:00 PM Pacific / 5:00 PM Eastern (21:00 UTC)**. The account is registered and the ConglomerAIte project page is public, but it has not been entered into or submitted to the hackathon.
 
 ## Safety freeze
 
@@ -23,8 +23,8 @@ Audited against the live Devpost account and submission fields on **2026-07-18**
 - [x] MIT `LICENSE` exists at the repository root.
 - [x] Architecture blueprint and upload-ready `docs/architecture-diagram.svg` exist.
 - [x] Three-paragraph pitch and full submission draft exist.
-- [x] Devpost project draft created at `https://devpost.com/software/the-conglomeraite`.
-- [x] Branded square thumbnail generated, saved under `docs/assets/`, and uploaded to the Devpost draft.
+- [x] Public Devpost project page created at `https://devpost.com/software/the-conglomeraite`.
+- [x] Branded square thumbnail generated, saved under `docs/assets/`, and uploaded to the Devpost project.
 - [x] OBS Studio is installed on the laptop for recording the final under-three-minute demo.
 - [x] One real QwenCloud run demonstrated 8/10 to structurally valid 10/10 convergence.
 - [x] Three-task baseline pilot is preserved with honest claim limits.
@@ -38,7 +38,7 @@ Audited against the live Devpost account and submission fields on **2026-07-18**
 
 - [x] **Create the public repository.** `https://github.com/Destr0yering/conglomeraite` is attached as `origin`.
 - [ ] **Install/provide `rsync` for deployment.** Git Bash is present, but its current installation does not include `rsync`; the staged deploy script cannot run from this laptop yet.
-- [x] **Create the Devpost project.** Draft project `the-conglomeraite` exists; it is not yet a hackathon submission.
+- [x] **Create the Devpost project.** Public project `the-conglomeraite` exists; it is not entered into or submitted to the hackathon.
 - [ ] **Deploy on Alibaba Cloud.** `cloud/alibaba-telemetry/` is tested source only; it is not deployed.
 - [ ] **Sign in to Alibaba Cloud in the in-app Browser.** The console is open as a handoff tab, but the browser session is currently signed out.
 - [ ] **Capture Workbench proof.** Save a judge-safe screenshot showing the running Alibaba resource and successful invocation/log.
@@ -51,7 +51,7 @@ Audited against the live Devpost account and submission fields on **2026-07-18**
 
 ## Live Devpost field checklist
 
-- [x] Project name, tagline, description, and Built With list are populated in the Devpost draft.
+- [x] Project name, tagline, description, and Built With list are populated on the Devpost project.
 - [ ] Submitter type: Individual, Team, or Organization — user decision required.
 - [ ] Organization name — optional if not applicable.
 - [ ] Country of residence for every member — user input required.
@@ -90,7 +90,7 @@ Audited against the live Devpost account and submission fields on **2026-07-18**
 3. Deploy the metadata receiver to Alibaba Function Compute, invoke it with a signed metadata-only event, and capture Workbench/log proof.
 4. Record the under-three-minute demo using the existing shot plan: topology, 10/10 evidence, edge/offline continuation, memory containment, measured pilot, and Alibaba proof.
 5. Verify the public GitHub repository's MIT license/About section and test every public link in a private/incognito window.
-6. Finish the existing Devpost draft: upload the diagram/screenshot, add the video, and complete the user-only eligibility fields.
+6. Finish the existing Devpost project submission: upload the diagram/screenshot, add the video, and complete the user-only eligibility fields.
 7. Submit early, reopen the public entry, verify the video/repository/files render without login, and retain a screenshot of the submitted state.
 
 ## Three-minute demo shot plan
