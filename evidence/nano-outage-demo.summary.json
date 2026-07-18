@@ -1,0 +1,35 @@
+{
+  "cloud_failure_injection": "Qwen-compatible endpoint forced to closed loopback 127.0.0.1:1",
+  "degraded_calls": 2,
+  "external_cloud_packets_possible": false,
+  "final_score": 8.0,
+  "input_tokens": 2475,
+  "iterations": 1,
+  "model_calls": 2,
+  "nano_safety": {
+    "available_ram_mb_after": 3227,
+    "llama_active_after": true,
+    "llama_bound_to_loopback_only": true,
+    "llama_memory_current_bytes_after": 723947520,
+    "llama_memory_high_bytes": 4831838208,
+    "llama_memory_max_bytes": 5637144576,
+    "llama_memory_swap_max_bytes": 3221225472,
+    "llama_oom_score_adjust": 500,
+    "llama_restarts": 0,
+    "swap_used_mb_after": 1481,
+    "sysop_bridge_active_after": true
+  },
+  "observed_at": "2026-07-18T14:48:16Z",
+  "paid_qwen_api_calls": 0,
+  "provider_latency_ms": 124678.89739599923,
+  "providers": [
+    "sysop-bridge"
+  ],
+  "release_id": "20260718T143606Z-321630888163",
+  "route_attempts": 3,
+  "schema_version": "1.0",
+  "source": "Nano systemd journal plus post-run service, socket, and memory inspection",
+  "status": "provider_error",
+  "stop_reason": "hardware-safe provider/deadline boundary",
+  "wall_elapsed_ms": 125728.24326300179
+}

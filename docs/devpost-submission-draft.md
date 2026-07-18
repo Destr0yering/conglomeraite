@@ -36,7 +36,7 @@ The dependency-light Python core contains provider adapters, retry classificatio
 
 ### Evidence and results
 
-One paid QwenCloud development run demonstrated an 8/10 first draft reaching structurally valid 10/10 consensus in two rounds. A three-task pilot observed lower latency and fewer output tokens than a budget-matched single-agent self-refiner on quality-noninferior cases, but it did not establish a general quality advantage: one task regressed by one evaluator point and the evaluator was not independent. A separate Jetson smoke test confirmed that the existing local SYSOP bridge and Qwen model respond successfully. Raw, sanitized summaries and claim limits are committed under `evidence/`.
+One paid QwenCloud development run demonstrated an 8/10 first draft reaching structurally valid 10/10 consensus in two rounds. A three-task pilot observed lower latency and fewer output tokens than a budget-matched single-agent self-refiner on quality-noninferior cases, but it did not establish a general quality advantage: one task regressed by one evaluator point and the evaluator was not independent. On the deployed Jetson, a zero-paid forced-loss task made three route attempts, degraded twice to the local SYSOP bridge, retained its best 8/10 candidate, and stopped at the 125.7-second safety boundary with both services healthy and zero model restarts. Raw, sanitized summaries and claim limits are committed under `evidence/`.
 
 ### Challenges and lessons
 
@@ -44,7 +44,7 @@ Jetson CPU and GPU share unified memory, so NVMe swap is not extra GPU memory an
 
 ### What is next
 
-The production roadmap adds a durable round ledger and reboot resume, thermal/swap-growth guards, adaptive context shrinking, independent/blinded evaluation, and signed remote policy. The immediate submission work is to capture the Alibaba Cloud deployment proof, complete the controlled Jetson deployment and offline demonstration, and publish the short demo video.
+The production roadmap adds a durable round ledger and reboot resume, thermal/swap-growth guards, adaptive context shrinking, independent/blinded evaluation, and signed remote policy. The immediate submission work is to capture the Alibaba Cloud deployment proof and publish the short demo video.
 
 ## Required custom fields
 
@@ -79,4 +79,4 @@ python scripts/validate_offline.py
 
 This command removes Qwen/DashScope credentials from its child-process environment, forces offline configuration, runs 47 deterministic core tests, runs three Function Compute receiver tests, and compiles the Python source. The working edge behavior and physical-device execution are shown in the public demo video. Sanitized development evidence is under `evidence/`; architecture and deployment instructions are under `docs/`, `systemd/`, `deploy/`, and `cloud/alibaba-telemetry/`.
 
-`[AFTER EDGE DEPLOYMENT: add the exact public test-build or judge-safe demo access procedure. Never place API keys, private SSH credentials, or reusable secrets here because judges can see this field.]`
+The target-device evidence is a metadata-only record at `evidence/nano-outage-demo.summary.json`; it contains no prompt, draft, hostname, IP address, API key, or reusable secret. No public SSH access is provided to the physical edge node.
