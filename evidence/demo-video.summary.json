@@ -1,8 +1,9 @@
 {
   "schema_version": "1.0",
   "created_at": "2026-07-18T22:30:00Z",
-  "updated_at": "2026-07-19T01:12:26Z",
+  "updated_at": "2026-07-19T01:48:22Z",
   "file": "artifacts/conglomeraite-demo.mp4",
+  "public_url": "https://youtu.be/EeBFzSipKyY",
   "duration_seconds": 174.60,
   "resolution": "1920x1080",
   "video": "H.264, 30 fps",

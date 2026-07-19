@@ -14,7 +14,7 @@ The system does not promise that every task will reach a perfect answer. It enfo
 
 - **Track 5 — EdgeAgent (primary):** cloud/edge routing, forced-offline operation, local-only inference, metadata-only traces, and graceful degradation during network failure.
 - **Track 3 — Agent Society (differentiator):** isolated Generator and Critic roles, a fixed quality contract, explicit disagreement/refinement, and reproducible comparison against a single-agent baseline.
-- **Evidence-ready implementation:** QwenCloud's OpenAI-compatible endpoint is visible in source/config; the service and deployment files are designed for the Orin's shared-memory constraints. The repository includes sanitized evidence from the controlled Nano outage run, the live Alibaba Function Compute receiver, and a public 2:55 demo with physical Jetson network-link-loss footage. The YouTube/Vimeo mirror and final Devpost submission remain.
+- **Evidence-ready implementation:** QwenCloud's OpenAI-compatible endpoint is visible in source/config; the service and deployment files are designed for the Orin's shared-memory constraints. The repository includes sanitized evidence from the controlled Nano outage run, the live Alibaba Function Compute receiver, and a public [2:55 YouTube demo](https://youtu.be/EeBFzSipKyY) with physical Jetson network-link-loss footage. Final Devpost submission remains.
 
 Devpost currently permits one track selection in the submission form. Select Track 5 and describe the Track 3 mechanics in the project narrative. See [the live-submission checklist](docs/submission-checklist.md).
 
@@ -136,7 +136,7 @@ The harness reports a descriptive one-shot baseline and a stronger single-agent 
 
 Do not claim a swarm efficiency improvement until it is measured. Use the included benchmark harness with the same corpus, model, and token/wall-clock budget for both the single-agent and swarm modes. Publish raw JSON/CSV, the commands used, p50/p95 latency, token/cost totals, peak memory, quality score, completion rate, and failover recovery—not only a favorable average.
 
-The public source repository is available at [github.com/Destr0yering/conglomeraite](https://github.com/Destr0yering/conglomeraite). Sanitized Nano and Alibaba deployment evidence is under `evidence/`, judge-safe Alibaba screenshots are under `artifacts/`, and the narrated 2:55 demo with physical Jetson network-link-loss footage is [artifacts/conglomeraite-demo.mp4](artifacts/conglomeraite-demo.mp4). The architecture PNG is uploaded to the live Devpost project. A YouTube/Vimeo mirror and the entrant-only submission fields remain. The exact shot list is in [the submission checklist](docs/submission-checklist.md), and the three-paragraph copy is in [the Devpost pitch](docs/devpost-pitch.md).
+The public source repository is available at [github.com/Destr0yering/conglomeraite](https://github.com/Destr0yering/conglomeraite). Sanitized Nano and Alibaba deployment evidence is under `evidence/`, judge-safe Alibaba screenshots are under `artifacts/`, and the narrated 2:55 demo with physical Jetson network-link-loss footage is available on [YouTube](https://youtu.be/EeBFzSipKyY) and as [artifacts/conglomeraite-demo.mp4](artifacts/conglomeraite-demo.mp4). The architecture PNG and YouTube URL are live on the Devpost project. The entrant-only submission fields remain. The exact shot list is in [the submission checklist](docs/submission-checklist.md), and the three-paragraph copy is in [the Devpost pitch](docs/devpost-pitch.md).
 
 ## Repository map
 

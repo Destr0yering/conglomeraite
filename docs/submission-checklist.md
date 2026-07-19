@@ -45,7 +45,7 @@ Audited against the live Devpost account and submission fields on **2026-07-18**
 - [x] **Complete a controlled Jetson deployment.** Release `20260718T143606Z-321630888163` was activated and exercised through the systemd task path.
 - [x] **Resolve model-service containment.** The active `llama.service` remains the single model owner but is now loopback-only with measured `MemoryHigh`, `MemoryMax`, `MemorySwapMax`, and `OOMScoreAdjust=500` controls.
 - [x] **Demonstrate edge degradation.** A zero-paid-call forced cloud failure produced two degraded SYSOP-bridge calls, retained the best candidate, and stopped at the bounded provider/deadline boundary.
-- [x] **Render the demo.** The Andrew neural-voice evidence cut is 2:55 at `artifacts/conglomeraite-demo.mp4` and includes a 14-second physical Jetson network-link-loss insert; a YouTube/Vimeo mirror is still required for Devpost's embed field.
+- [x] **Render and publish the demo.** The Andrew neural-voice evidence cut is 2:55 at `artifacts/conglomeraite-demo.mp4`, includes a 14-second physical Jetson network-link-loss insert, and is public at https://youtu.be/EeBFzSipKyY.
 - [x] **Upload the architecture diagram.** `artifacts/architecture-diagram.png` is live as the Devpost project thumbnail; the PNG/SVG remain ready for any submission-gallery field.
 - [ ] **Fill every required field and submit** before the deadline; do not wait until the final hour.
 
@@ -63,7 +63,7 @@ Audited against the live Devpost account and submission fields on **2026-07-18**
 - [x] Direct URL to `src/conglomeraite/config.py` showing the QwenCloud base URL.
 - [x] Architecture diagram file ready at `artifacts/architecture-diagram.png` and `docs/architecture-diagram.svg`; upload to Devpost remains.
 - [x] Alibaba Cloud Workbench and trigger screenshots ready under `artifacts/`; upload to Devpost remains.
-- [ ] Public demo video URL. A website and ZIP file are not required by the current form.
+- [x] Public demo video URL: https://youtu.be/EeBFzSipKyY. A website and ZIP file are not required by the current form.
 - [ ] AI-tools disclosure — draft ready.
 - [ ] Learning level — user selection required.
 - [ ] Age-of-majority confirmation — user confirmation required.
