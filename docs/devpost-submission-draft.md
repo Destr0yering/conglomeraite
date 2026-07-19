@@ -12,7 +12,7 @@ Prepared on 2026-07-18 from the live QwenCloud hackathon submission fields. Repl
 
 **Repository URL:** https://github.com/Destr0yering/conglomeraite
 
-**Video:** `artifacts/conglomeraite-demo.mp4` is a narrated 2:55 public-repository artifact with the Microsoft Andrew neural male voice. `[PENDING: YouTube or Vimeo mirror URL for the Devpost embed field]`
+**Video:** `artifacts/conglomeraite-demo.mp4` is a narrated 2:55 public-repository artifact with the Microsoft Andrew neural male voice and a 14-second physical Jetson network-link-loss insert. `[PENDING: YouTube or Vimeo mirror URL for the Devpost embed field]`
 
 **Devpost project:** https://devpost.com/software/the-conglomeraite (project ID 1349485; public, but not entered into or submitted to the hackathon)
 
@@ -44,7 +44,7 @@ Jetson CPU and GPU share unified memory, so NVMe swap is not extra GPU memory an
 
 ### What is next
 
-The production roadmap adds a durable round ledger and reboot resume, thermal/swap-growth guards, adaptive context shrinking, independent/blinded evaluation, and signed remote policy. Alibaba deployment proof is complete; the immediate submission work is to publish the short demo video, upload the ready images, and complete the entrant-only fields.
+The production roadmap adds a durable round ledger and reboot resume, thermal/swap-growth guards, adaptive context shrinking, independent/blinded evaluation, and signed remote policy. Alibaba deployment proof is complete; the immediate submission work is to mirror the finished short demo on YouTube or Vimeo and complete the entrant-only fields.
 
 ## Required custom fields
 

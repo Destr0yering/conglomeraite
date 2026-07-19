@@ -1,13 +1,19 @@
 {
   "schema_version": "1.0",
   "created_at": "2026-07-18T22:30:00Z",
-  "updated_at": "2026-07-19T00:27:46Z",
+  "updated_at": "2026-07-19T01:12:26Z",
   "file": "artifacts/conglomeraite-demo.mp4",
   "duration_seconds": 174.60,
   "resolution": "1920x1080",
   "video": "H.264, 30 fps",
   "audio": "AAC mono narration; Microsoft en-US-AndrewNeural male voice at rate +3%",
   "slides": 8,
+  "physical_edge_footage": {
+    "present": true,
+    "start_seconds": 62,
+    "end_seconds": 76,
+    "description": "Muted physical Jetson Ethernet-link-loss footage; the controlled run result follows in the evidence sequence."
+  },
   "source_evidence": [
     "artifacts/architecture-diagram.png",
     "evidence/live-cloud-smoke-v3.summary.json",
@@ -17,5 +23,5 @@
     "artifacts/alibaba-function-trigger-auth-proof.png"
   ],
   "model_api_calls": 0,
-  "notes": "Narration was rendered with Microsoft's online neural speech service and normalized locally. No API key, QwenCloud inference, or paid model call was used."
+  "notes": "Includes a 14-second physical Jetson Ethernet-link-loss insert. The insert documents the hardware action; measured routing and outcome claims remain grounded in evidence/nano-outage-demo.summary.json from the controlled closed-loopback run. Narration was rendered with Microsoft's online neural speech service and normalized locally. No API key, QwenCloud inference, or paid model call was used."
 }
