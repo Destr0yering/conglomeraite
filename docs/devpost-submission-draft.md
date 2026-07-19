@@ -12,7 +12,7 @@ Prepared on 2026-07-18 from the live QwenCloud hackathon submission fields. Repl
 
 **Repository URL:** https://github.com/Destr0yering/conglomeraite
 
-**Video:** `artifacts/conglomeraite-demo.mp4` is a narrated 2:47 public-repository artifact. `[PENDING: YouTube or Vimeo mirror URL for the Devpost embed field]`
+**Video:** `artifacts/conglomeraite-demo.mp4` is a narrated 2:52 public-repository artifact with the Microsoft Mark male voice. `[PENDING: YouTube or Vimeo mirror URL for the Devpost embed field]`
 
 **Devpost project:** https://devpost.com/software/the-conglomeraite (project ID 1349485; public, but not entered into or submitted to the hackathon)
 
