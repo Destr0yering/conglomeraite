@@ -58,6 +58,13 @@ class CliTests(unittest.TestCase):
             if os.name != "nt":
                 self.assertEqual(path.stat().st_mode & 0o777, 0o600)
 
+    def test_protected_atomic_result_file_without_fchmod(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "result.json"
+            with patch.object(os, "fchmod", None, create=True):
+                _write_protected_json(path, {"status": "safe"})
+            self.assertEqual(json.loads(path.read_text())["status"], "safe")
+
 
 if __name__ == "__main__":
     unittest.main()

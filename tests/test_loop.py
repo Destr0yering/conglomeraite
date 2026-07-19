@@ -92,6 +92,29 @@ class LoopTests(unittest.TestCase):
         self.assertEqual(result.calls[0].finish_reason, "length")
         self.assertIn("output-token limit", provider.messages[2][1].content)
 
+    def test_truncated_generator_is_not_returned_at_terminal_boundary(self) -> None:
+        provider = ScriptedProvider(
+            [
+                Completion(
+                    "partial draft",
+                    "local",
+                    5.0,
+                    input_tokens=10,
+                    output_tokens=5,
+                    providers_attempted=("local",),
+                    finish_reason="length",
+                ),
+                "SCORE: 9/10\nREFINEMENTS: complete the answer",
+            ]
+        )
+        result = make_loop(
+            provider,
+            loop_config=LoopConfig(max_iterations=1, max_stagnant_iterations=0),
+        ).run("design a system")
+        self.assertEqual(result.status, "max_iterations")
+        self.assertIsNone(result.final_draft)
+        self.assertIsNone(result.final_score)
+
     def test_iterates_feedback_until_ten(self) -> None:
         provider = ScriptedProvider(
             [

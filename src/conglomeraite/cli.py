@@ -270,7 +270,9 @@ def _write_protected_json(path: Path, payload: dict[str, object]) -> None:
     descriptor, temporary_name = tempfile.mkstemp(prefix=f".{path.name}.", dir=parent)
     temporary = Path(temporary_name)
     try:
-        os.fchmod(descriptor, 0o600)
+        fchmod = getattr(os, "fchmod", None)
+        if callable(fchmod):
+            fchmod(descriptor, 0o600)
         with os.fdopen(descriptor, "w", encoding="utf-8", closefd=True) as handle:
             descriptor = -1
             json.dump(payload, handle, indent=2, sort_keys=True)

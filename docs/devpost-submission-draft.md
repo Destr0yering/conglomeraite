@@ -77,6 +77,6 @@ No paid API credential is required for repository validation:
 python scripts/validate_offline.py
 ```
 
-This command removes Qwen/DashScope credentials from its child-process environment, forces offline configuration, runs 47 deterministic core tests, runs three Function Compute receiver tests, and compiles the Python source. The working edge behavior and physical-device execution are shown in the public demo video. Sanitized development evidence is under `evidence/`; architecture and deployment instructions are under `docs/`, `systemd/`, `deploy/`, and `cloud/alibaba-telemetry/`.
+This command removes Qwen/DashScope credentials from its child-process environment, forces offline configuration, runs 49 deterministic core tests, runs three Function Compute receiver tests, and compiles the Python source. GitHub Actions runs the same credential-free validation on Windows and Ubuntu. The working edge behavior and physical-device execution are shown in the public demo video. Sanitized development evidence is under `evidence/`; architecture and deployment instructions are under `docs/`, `systemd/`, `deploy/`, and `cloud/alibaba-telemetry/`.
 
 The target-device evidence is a metadata-only record at `evidence/nano-outage-demo.summary.json`; it contains no prompt, draft, hostname, IP address, API key, or reusable secret. No public SSH access is provided to the physical edge node.

@@ -29,7 +29,7 @@ Audited against the live Devpost account and submission fields on **2026-07-18**
 - [x] One real QwenCloud run demonstrated 8/10 to structurally valid 10/10 convergence.
 - [x] Three-task baseline pilot is preserved with honest claim limits.
 - [x] One real Nano SYSOP-bridge smoke test and memory snapshot are preserved.
-- [x] Offline verification passes: 47 core tests, 3 telemetry tests, and Python compilation.
+- [x] Offline verification passes: 49 core tests, 3 telemetry tests, and Python compilation on Windows; GitHub Actions repeats the credential-free suite on Windows and Ubuntu.
 - [x] `deploy/deploy.sh` passes Bash syntax validation with Git for Windows.
 - [x] Repository scan found no `sk-ws-` credential in tracked workspace files.
 - [x] Initial local Git commits created on `codex/hackathon-mvp`; the working tree was clean after the commits.

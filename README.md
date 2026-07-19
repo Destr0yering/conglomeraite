@@ -2,6 +2,8 @@
 
 **Fault-Tolerant Swarm Intelligence & 10/10 Refinement**
 
+[![Offline validation](https://github.com/Destr0yering/conglomeraite/actions/workflows/offline-validation.yml/badge.svg)](https://github.com/Destr0yering/conglomeraite/actions/workflows/offline-validation.yml)
+
 ![The ConglomerAIte edge-cloud Generator/Critic feedback loop](docs/assets/conglomeraite-devpost-thumbnail.png)
 
 ConglomerAIte is an edge-native Generator/Critic workflow for the QwenCloud Global AI Hackathon. Its CLI accepts SYSOP-style task envelopes and routes primary reasoning to QwenCloud or, on the target NVIDIA Jetson Orin Nano 8 GB, through the existing advisory-only SYSOP Qwen Bridge. Direct task dispatch from the broader SYSOP Workflow Engine remains a deployment integration step.
@@ -12,7 +14,7 @@ The system does not promise that every task will reach a perfect answer. It enfo
 
 - **Track 5 — EdgeAgent (primary):** cloud/edge routing, forced-offline operation, local-only inference, metadata-only traces, and graceful degradation during network failure.
 - **Track 3 — Agent Society (differentiator):** isolated Generator and Critic roles, a fixed quality contract, explicit disagreement/refinement, and reproducible comparison against a single-agent baseline.
-- **Evidence-ready implementation:** QwenCloud's OpenAI-compatible endpoint is visible in source/config; the service and deployment files are designed for the Orin's shared-memory constraints. The repository now includes sanitized evidence from the controlled Nano outage run and the live Alibaba Function Compute receiver. The public demo video and final Devpost uploads remain.
+- **Evidence-ready implementation:** QwenCloud's OpenAI-compatible endpoint is visible in source/config; the service and deployment files are designed for the Orin's shared-memory constraints. The repository includes sanitized evidence from the controlled Nano outage run, the live Alibaba Function Compute receiver, and a public 2:55 demo. The YouTube/Vimeo mirror and final Devpost submission remain.
 
 Devpost currently permits one track selection in the submission form. Select Track 5 and describe the Track 3 mechanics in the project narrative. See [the live-submission checklist](docs/submission-checklist.md).
 

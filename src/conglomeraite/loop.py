@@ -382,7 +382,7 @@ class RefinementLoop:
         call_traces: list[CallTrace] = []
         previous_draft: str | None = None
         previous_critique: str | None = None
-        latest_draft: str | None = None
+        latest_complete_draft: str | None = None
         best_score = -1.0
         best_draft: str | None = None
         best_iteration: int | None = None
@@ -401,7 +401,8 @@ class RefinementLoop:
                 )
                 draft = generator.text
                 generator_truncated = generator.finish_reason == "length"
-                latest_draft = draft
+                if not generator_truncated:
+                    latest_complete_draft = draft
                 fingerprint = hashlib.sha256(draft.encode("utf-8")).digest()
                 previously_rejected = fingerprint in rejected_candidates
 
@@ -464,10 +465,13 @@ class RefinementLoop:
                     )
                 )
 
-                eligible_as_best = not (
-                    score is not None
-                    and score >= self.config.target_score
-                    and (not evaluation.can_reach_consensus or previously_rejected)
+                eligible_as_best = (
+                    not generator_truncated
+                    and not (
+                        score is not None
+                        and score >= self.config.target_score
+                        and (not evaluation.can_reach_consensus or previously_rejected)
+                    )
                 )
                 if score is not None and eligible_as_best and score > best_score:
                     best_score = score
@@ -499,8 +503,8 @@ class RefinementLoop:
                         "stagnated",
                         f"score failed to improve for {stagnant_iterations} iterations",
                         task,
-                        best_draft or latest_draft,
-                        best_score if best_score >= 0 else score,
+                        best_draft or latest_complete_draft,
+                        best_score if best_score >= 0 else None,
                         iteration_traces,
                         call_traces,
                         started,
@@ -515,7 +519,7 @@ class RefinementLoop:
                 "circuit_breaker",
                 str(exc),
                 task,
-                best_draft or latest_draft,
+                best_draft or latest_complete_draft,
                 best_score if best_score >= 0 else None,
                 iteration_traces,
                 call_traces,
@@ -527,7 +531,7 @@ class RefinementLoop:
                 "deadline",
                 str(exc),
                 task,
-                best_draft or latest_draft,
+                best_draft or latest_complete_draft,
                 best_score if best_score >= 0 else None,
                 iteration_traces,
                 call_traces,
@@ -539,7 +543,7 @@ class RefinementLoop:
                 "provider_error",
                 str(exc),
                 task,
-                best_draft or latest_draft,
+                best_draft or latest_complete_draft,
                 best_score if best_score >= 0 else None,
                 iteration_traces,
                 call_traces,
@@ -552,8 +556,8 @@ class RefinementLoop:
             "max_iterations",
             f"target not reached within {self.config.max_iterations} iterations",
             task,
-            best_draft or last.draft,
-            best_score if best_score >= 0 else last.score,
+            best_draft or latest_complete_draft,
+            best_score if best_score >= 0 else None,
             iteration_traces,
             call_traces,
             started,
