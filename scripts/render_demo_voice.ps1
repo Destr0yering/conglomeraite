@@ -1,40 +1,45 @@
 param(
     [string]$Narration = "docs\demo-narration.txt",
     [string]$Output = "artifacts\conglomeraite-demo-narration.wav",
-    [string]$VoiceName = "Microsoft Mark",
-    [ValidateRange(-10, 10)]
-    [int]$Rate = 0
+    [string]$VoiceName = "en-US-AndrewNeural",
+    [string]$Rate = "+3%",
+    [string]$Python = "python",
+    [string]$Ffmpeg = ""
 )
 
 $ErrorActionPreference = "Stop"
-Add-Type -AssemblyName System.Speech
+$text = Get-Content -Raw -LiteralPath $Narration
+$resolvedOutput = [System.IO.Path]::GetFullPath($Output)
+[System.IO.Directory]::CreateDirectory([System.IO.Path]::GetDirectoryName($resolvedOutput)) | Out-Null
+$temporaryMp3 = [System.IO.Path]::ChangeExtension($resolvedOutput, ".neural.mp3")
 
-$synth = New-Object System.Speech.Synthesis.SpeechSynthesizer
 try {
-    $installed = @($synth.GetInstalledVoices() | Where-Object { $_.Enabled })
-    $selected = $installed | Where-Object { $_.VoiceInfo.Name -eq $VoiceName } | Select-Object -First 1
-    if (-not $selected) {
-        $selected = $installed | Where-Object { $_.VoiceInfo.Gender -eq "Male" } | Select-Object -First 1
-    }
-    if (-not $selected) {
-        throw "No enabled male speech voice is installed."
+    if (-not $Ffmpeg) {
+        $Ffmpeg = (& $Python -c "import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())").Trim()
+        if ($LASTEXITCODE -ne 0 -or -not $Ffmpeg) {
+            throw "Unable to locate FFmpeg through imageio-ffmpeg. Install the demo dependencies first."
+        }
     }
 
-    $synth.SelectVoice($selected.VoiceInfo.Name)
-    $synth.Rate = $Rate
-    $synth.Volume = 100
-    $text = Get-Content -Raw -LiteralPath $Narration
-    $resolvedOutput = [System.IO.Path]::GetFullPath($Output)
-    [System.IO.Directory]::CreateDirectory([System.IO.Path]::GetDirectoryName($resolvedOutput)) | Out-Null
-    $synth.SetOutputToWaveFile($resolvedOutput)
-    $synth.Speak($text)
+    & $Python -m edge_tts --voice $VoiceName ("--rate={0}" -f $Rate) --text $text --write-media $temporaryMp3
+    if ($LASTEXITCODE -ne 0) {
+        throw "Online neural narration failed for voice $VoiceName."
+    }
+
+    & $Ffmpeg -hide_banner -loglevel error -y -i $temporaryMp3 -af "loudnorm=I=-16:TP=-1.5:LRA=11" -ac 1 -ar 48000 -c:a pcm_s16le $resolvedOutput
+    if ($LASTEXITCODE -ne 0) {
+        throw "FFmpeg failed to normalize the neural narration."
+    }
+
     [pscustomobject]@{
-        Voice = $selected.VoiceInfo.Name
-        Gender = $selected.VoiceInfo.Gender.ToString()
+        Provider = "Microsoft online neural speech"
+        Voice = $VoiceName
         Rate = $Rate
         Output = $resolvedOutput
     }
 }
 finally {
-    $synth.Dispose()
+    if (Test-Path -LiteralPath $temporaryMp3) {
+        Remove-Item -LiteralPath $temporaryMp3
+    }
 }

@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "created_at": "2026-07-18T22:30:00Z",
-  "updated_at": "2026-07-19T00:04:05Z",
+  "updated_at": "2026-07-19T00:27:46Z",
   "file": "artifacts/conglomeraite-demo.mp4",
-  "duration_seconds": 172.13,
+  "duration_seconds": 174.60,
   "resolution": "1920x1080",
   "video": "H.264, 30 fps",
-  "audio": "AAC mono narration; Microsoft Mark male voice at rate 0",
+  "audio": "AAC mono narration; Microsoft en-US-AndrewNeural male voice at rate +3%",
   "slides": 8,
   "source_evidence": [
     "artifacts/architecture-diagram.png",
@@ -17,5 +17,5 @@
     "artifacts/alibaba-function-trigger-auth-proof.png"
   ],
   "model_api_calls": 0,
-  "notes": "Generated locally from the committed evidence bundle; no new QwenCloud inference was performed."
+  "notes": "Narration was rendered with Microsoft's online neural speech service and normalized locally. No API key, QwenCloud inference, or paid model call was used."
 }

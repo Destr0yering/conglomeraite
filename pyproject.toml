@@ -12,6 +12,7 @@ dependencies = []
 [project.optional-dependencies]
 jetson = ["nvidia-ml-py>=12"]
 test = ["pytest>=8"]
+demo = ["edge-tts==7.2.8", "imageio-ffmpeg>=0.6", "Pillow>=11"]
 
 [project.scripts]
 conglomeraite = "conglomeraite.cli:main"
